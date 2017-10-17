@@ -21,7 +21,11 @@ library(tidyverse)
 
 1- plot()
 
+<<<<<<< HEAD
 ```{r plot_dispersao}
+=======
+```{r mtcars}
+>>>>>>> dec215dcd740d61c9b0a183d56ba282892e3fe47
 plot(mtcars$wt, mtcars$mpg)
 # ou
 plot(mtcars$mpg ~ mtcars$wt)
@@ -29,13 +33,21 @@ plot(mtcars$mpg ~ mtcars$wt)
 
 2- qplot()
 
+<<<<<<< HEAD
 ```{r qplot_dispersao}
+=======
+```{r}
+>>>>>>> dec215dcd740d61c9b0a183d56ba282892e3fe47
 qplot(mtcars$wt, mtcars$mpg)
 ```
 
 3- ggplot()
 
+<<<<<<< HEAD
 ```{r ggplot_dispersao}
+=======
+```{r}
+>>>>>>> dec215dcd740d61c9b0a183d56ba282892e3fe47
 ggplot(data = mtcars, aes(x = wt, y = mpg)) + geom_point()
 ```
 
@@ -45,13 +57,21 @@ ggplot(data = mtcars, aes(x = wt, y = mpg)) + geom_point()
 
 1- plot()
 
+<<<<<<< HEAD
 ```{r linha_plot}
+=======
+```{r}
+>>>>>>> dec215dcd740d61c9b0a183d56ba282892e3fe47
 plot(pressure$temperature, pressure$pressure, type = "l")
 ```
 
 Adicionando pontos ou linhas, use points() ou lines()
 
+<<<<<<< HEAD
 ```{r linha_pontos_plot}
+=======
+```{r}
+>>>>>>> dec215dcd740d61c9b0a183d56ba282892e3fe47
 plot(pressure$temperature, pressure$pressure, type = "l")
 points(pressure$temperature, pressure$pressure)
 #
@@ -64,18 +84,27 @@ points(pressure$temperature, pressure$pressure/2, col = "red")
 
 Pontos e linhas juntos
 
+<<<<<<< HEAD
 ```{r linha_ponto_qplot}
+=======
+```{r}
+>>>>>>> dec215dcd740d61c9b0a183d56ba282892e3fe47
 qplot(pressure$temperature, pressure$pressure, geom = c("line", "point"))
 ```
 
 3- ggplot()
 
+<<<<<<< HEAD
 ```{r linha_ponto_ggplot}
+=======
+```{r}
+>>>>>>> dec215dcd740d61c9b0a183d56ba282892e3fe47
 ggplot(pressure, aes(x = temperature, y = pressure)) +
   geom_line()                                        +
   geom_point()
 ```
 
+<<<<<<< HEAD
 ---
 
 #### 2.3 Criando um grafico de barras
@@ -116,4 +145,6 @@ ggplot(BOD, aes(x = Time, y = demand)) + geom_bar(stat = "identity")
 
 
 
+=======
+>>>>>>> dec215dcd740d61c9b0a183d56ba282892e3fe47
 
