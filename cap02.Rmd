@@ -1,0 +1,119 @@
+---
+title: "R Graphics Cookbook"
+author: "Beto"
+date: "October 17, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo      = TRUE, 
+                      warning   = FALSE, 
+                      message   = FALSE, 
+                      fig.path  = 'figuras/', 
+                      fig.ext   = 'jpeg',
+                      fig.align = 'center')
+library(tidyverse)
+```
+
+### Capitulo 2 - Explorando rapidamente dados
+
+#### 2.1 Creando um grafico de dispersao
+
+1- plot()
+
+```{r plot_dispersao}
+plot(mtcars$wt, mtcars$mpg)
+# ou
+plot(mtcars$mpg ~ mtcars$wt)
+```
+
+2- qplot()
+
+```{r qplot_dispersao}
+qplot(mtcars$wt, mtcars$mpg)
+```
+
+3- ggplot()
+
+```{r ggplot_dispersao}
+ggplot(data = mtcars, aes(x = wt, y = mpg)) + geom_point()
+```
+
+---
+
+#### 2.2 Criando um grafico de linha
+
+1- plot()
+
+```{r linha_plot}
+plot(pressure$temperature, pressure$pressure, type = "l")
+```
+
+Adicionando pontos ou linhas, use points() ou lines()
+
+```{r linha_pontos_plot}
+plot(pressure$temperature, pressure$pressure, type = "l")
+points(pressure$temperature, pressure$pressure)
+#
+lines(pressure$temperature,  pressure$pressure/2, col = "red")
+points(pressure$temperature, pressure$pressure/2, col = "red")
+
+```
+
+2- qplot()
+
+Pontos e linhas juntos
+
+```{r linha_ponto_qplot}
+qplot(pressure$temperature, pressure$pressure, geom = c("line", "point"))
+```
+
+3- ggplot()
+
+```{r linha_ponto_ggplot}
+ggplot(pressure, aes(x = temperature, y = pressure)) +
+  geom_line()                                        +
+  geom_point()
+```
+
+---
+
+#### 2.3 Criando um grafico de barras
+
+**Grafico de barra de contagem de valores
+
+1- plot()
+
+```{r barra_plot}
+barplot(BOD$demand, names.arg = BOD$Time)
+```
+
+Usando uma tabela
+
+```{r}
+table(mtcars$cyl)
+
+#
+barplot(table(mtcars$cyl))
+```
+
+2- qplot()
+
+```{r}
+library(ggplot2)
+#qplot(Time, demand, data = BOD, geom = "bar", stat = "identity")
+```
+
+####Mensagem de erro!!
+
+Grafico de valores...
+
+3- ggplot()
+
+```{r}
+ggplot(BOD, aes(x = Time, y = demand)) + geom_bar(stat = "identity")
+```
+
+
+
+
